@@ -1,7 +1,7 @@
 /*
  * @Author: zhangcx01
  * @Date: 2020-07-30 17:18:22
- * @LastEditTime: 2020-07-30 18:00:57
+ * @LastEditTime: 2020-07-30 18:37:23
  * @LastEditors: zcx4150@gmail.com
  * @Description:
  * @FilePath: /hooksdemo/src/navigator/stack/index.js
@@ -19,7 +19,11 @@ const StackNavigator = () => {
         component={HomeScreen}
         options={{title: 'Hooks'}}
       />
-      <Stack.Screen name="Details" component={DetailsScreen} />
+      <Stack.Screen
+        name="Details"
+        component={DetailsScreen}
+        options={({route}) => ({title: route.params.title})}
+      />
     </Stack.Navigator>
   );
 };
